@@ -32,3 +32,12 @@ const employeeCardsArray = Array.from(employeeCards);
 employeeCardsArray.forEach(card => {
     card.style.backgroundColor = "#e0f7fa"; // Light blue background
 });
+// Task 4: Implementing Removal of Employee Cards with Event Bubbling
+employeeContainer.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+        const card = event.target.closest(".employee-card");
+        employeeContainer.removeChild(card);
+    } else {
+        console.log("Employee card clicked");
+    }
+});
